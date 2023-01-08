@@ -1,0 +1,175 @@
+//-------------------------------------Content section-----------------------------------------
+//---------------------------------------------------------------------------------------------
+.content-section {
+    padding: 20px 0 80px 0;
+
+    @include largeMobile {
+        padding: 0 0 80px 0;
+    }
+
+    .main-container {
+        @include mainContainer;
+        //border: $buildBorder;
+
+        @include largeMobile {
+            @include mobileImageContainer;
+        }
+
+        .row {
+
+            @include largeMobile {
+                @include reverseRowStack;
+            }
+
+            .col {
+
+                @include largeMobile {
+                    text-align: center;
+                }
+
+                .main-h1 {
+                    font-family: $mainFont;
+                    font-size: 60px;
+                    font-weight: $extraBold;
+                    color: $mainH1Color;
+                    letter-spacing: -2px;
+                    margin-bottom: 40px;
+                    //border: $buildBorder;
+
+                    @include tablet {
+                        font-size: 45px;
+                    }
+
+                    @include largeMobile {
+                        font-size: 36px;
+                        letter-spacing: -1px;
+                        margin-top: 40px;
+                        margin-bottom: 20px;
+                    }
+
+                    @include fold {
+                        font-size: 28px;
+                    }
+
+                    @include large {
+                        font-size: 82px;
+                    }
+                }
+
+                .main-p {
+                    font-family: $mainFont;
+                    font-size: 14px;
+                    font-weight: $bold;
+                    color: $mainPColor;
+                    line-height: 20px;  
+                    width: 70%;
+                    padding-bottom: 20px;
+                    padding-left: 5px;
+                    //border: $buildBorder;
+
+                    @include largeMobile {
+                        font-size: 15px;
+                        line-height: 22px;
+                        width: 90%;
+                        padding: 0;
+                        margin: $centerContainer;
+                    }
+
+                    @include large {
+                        font-size: 18px;
+                        width: 72%;
+                        line-height: 25px;
+                    }
+                }
+
+                .main-btn {
+                    display: inline-block;
+                    font-family: $mainFont;
+                    font-size: 12px;
+                    font-weight: $extraBold;
+                    color: $backgroundColor;
+                    background-color: hsl(0 0 0);
+                    text-decoration: $getRid;
+                    padding: 12px 20px 12px 20px;
+                    border-radius: 10px;
+                    margin-left: 5px;
+                    margin-bottom: 80px;
+
+                    &:hover {
+                        background-color: $backgroundColor;
+                        color:hsl(0 0 0);
+                        border: 1px solid hsl(0 0 0);
+                    }
+
+                    @include largeMobile {
+                        font-size: 16px;
+                        padding: 15px 20px 15px 20px;
+                        margin-top: 15px;
+                        margin-bottom: 45px;
+                    }
+
+                    @include large {
+                        font-size: 18px;
+                        padding: 18px 28px 18px 28px;
+                        margin-bottom: 100px;
+                    }
+                }
+
+                .bottom-logo-div {
+                    @include flexAlignCenter;
+                    width: 70%;
+                    margin-left: 5px;
+                    //border: $buildBorder;
+
+                    @include largeMobile {
+                        width: 90%;
+                        margin: $centerContainer;
+                        justify-content: space-between;
+                        margin-bottom: 30px;
+                    }
+
+                    @include large {
+                        width: 80%;
+                    }
+
+                    .bottom-logo {
+                        width: 20%;
+                        margin-right: 18px;
+                        //border: $buildBorder;
+
+                        @include largeMobile {
+                            margin-right: 0;
+                        }
+
+                        @include large {
+                            margin-right: 22px
+                        }
+                    }
+                }
+            }
+
+            .col2 {
+
+                .main-img {
+                    width: 100%;
+                    height: 100%;
+                    //border: $buildBorder;
+
+                    @include largeMobile {
+                        display: $getRid;
+                    }
+                }
+
+                .main-img-mob {
+                    display: $getRid;
+                    
+                    @include largeMobile {
+                        display: block;
+                        width: 100%;
+                        //border: $buildBorder;
+                    }
+                }
+            }
+        }//row
+    }//main-container
+}//section

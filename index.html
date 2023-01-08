@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  <link rel="stylesheet" href="css/main.min.css">
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); text-decoration: none;}
+  </style>
+</head>
+
+<!--Nav section-->
+<body>
+  <header>
+    <div class="nav-container">
+      <nav class="navbar">
+        <div class="nav-logo-div">
+          <img class="nav-logo" src="images/logo.svg" alt="Snap Logo">
+        </div>
+
+        <!--hamburger-->
+        <div class="toggle-button">
+          <div class="toggle-button_burger"></div>
+        </div>
+
+        <div class="nav-menu">
+          <div class="ul-div">
+            <ul class="ul-left">
+              <div class="dropdown">
+                <!--dropdown item 1-->
+                <button class="dropbtn">Features
+                  <img class="dropdown-arrow" src="images/icon-arrow-down.svg" alt="arrow">
+                </button>
+                <div class="dropdown-content">
+                  <a class="dropdown-item" href="#"><img class="dropdown-logo" src="images/icon-todo.svg" alt="To Do">ToDo List</a>
+                  <a class="dropdown-item" href="#"><img class="dropdown-logo" src="images/icon-calendar.svg" alt="Calender">Calender</a>
+                  <a class="dropdown-item" href="#"><img class="dropdown-logo" src="images/icon-reminders.svg" alt="Reminders">Reminders</a>
+                  <a class="dropdown-item" href="#"><img class="dropdown-logo" src="images/icon-planning.svg" alt="Planning">Planning</a>
+                </div><!--drowdown content-->
+              </div><!--dropdown div-->
+
+                <!--dropdown item 2-->
+              <div class="dropdown">  
+                <button class="dropbtn">Company
+                  <img class="dropdown-arrow" src="images/icon-arrow-down.svg" alt="arrow">
+                </button>
+                <div class="dropdown-content-two">
+                  <a class="dropdown-item" href="#">History</a>
+                  <a class="dropdown-item" href="#">Our Team</a>
+                  <a class="dropdown-item" href="#">Blog</a>
+                </div> <!--dropdown content-->  
+              </div><!--dropdown-->
+
+                <!--remaining nav items-->
+                <li><a class="nav-item" href="#">Careers</a></li>
+                <li><a class="nav-item" href="#">About</a></li>
+            </ul><!--ul left-->
+
+            <ul class="ul-right">
+              <li class="li-right"><a class="nav-item" href="#">Login</a></li>
+              <li class="li-right"><a class="nav-btn" href="#">Register</a></li>
+            </ul>
+          </div><!--ul div-->
+        </div><!--nav menu-->
+      </nav><!--navbar-->
+    </div><!--nav container-->
+  </header>
+
+  <!--Content section-->
+  <main>
+    <section class="content-section">
+      <div class="main-container">
+        <div class="row">
+          <div class="col">
+            <h1 class="main-h1">Make<br> remote work</h1>
+
+            <p class="main-p">Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+
+            <a class="main-btn" href="#">Learn more</a>
+
+            <div class="bottom-logo-div">
+              <img class="bottom-logo" src="images/client-databiz.svg" alt="Databiz">
+              <img class="bottom-logo" src="images/client-audiophile.svg" alt="Audiophile">
+              <img class="bottom-logo" src="images/client-meet.svg" alt="Meet">
+              <img class="bottom-logo" src="images/client-maker.svg" alt="Maker">
+            </div>
+
+          </div><!--col-->
+
+          <div class="col2">
+            <img class="main-img" src="images/image-hero-desktop.png" alt="Laptop and shapes">
+            <img class="main-img-mob" src="images/image-hero-mobile.png" alt="Laptop and shapes">
+          </div><!--col2-->
+        </div><!--row-->
+      </div><!--main container-->
+    </section>
+  </main>
+
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/TiffaJenkins">Tiffa Jenkins</a>.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

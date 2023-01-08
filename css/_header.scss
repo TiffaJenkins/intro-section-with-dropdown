@@ -1,0 +1,376 @@
+//----------------------------------------Navbar------------------------------------------------
+//----------------------------------------------------------------------------------------------
+.nav-container {
+    @include navContainer;
+    //border: $buildBorder;
+
+    @include largeMobile {
+        @include mobileContainer;
+    }
+
+    .navbar {
+        @include flexAlignCenter; 
+        padding: 8px 0 8px 0;
+        overflow: hidden;
+        //border: $buildBorder;
+
+        @include largeMobile {
+            @include flexColAlignStart;
+            padding: 20px 0 20px 0;
+        }
+
+        @include large {
+            padding: 8px 0 8px 0;
+        }
+
+        //toggle button---------------------------
+        .toggle-button {
+            position: absolute;
+            top: 24px;
+            right: 22px;
+            display: $getRid;
+            width: 30px;
+            padding: 10px 0 10px 0;
+            transition: all 0.5s ease-in-out;
+            //border: $buildBorder;
+
+            @include largeMobile {
+                display: flex;
+            }
+
+            .toggle-button_burger {
+                height: 2px;
+                width: 100%;
+                background-color: hsl(0, 0%, 0%);
+                border-radius: 10px;
+                transition: all 0.5s ease-in-out;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    height: 2px;
+                    width: 100%;
+                    background-color: hsl(0, 0%, 0%);
+                    border-radius: 10px;
+                    transition: all 0.5s ease-in-out;
+                    transform: translateY(-8px);
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    height: 2px;
+                    width: 100%;
+                    background-color: hsl(0, 0%, 0%);
+                    border-radius: 10px;
+                    transition: all 0.5s ease-in-out;
+                    transform: translateY(8px);
+                }
+            }
+
+            //animation-----------------------------
+            &.open {
+
+                .toggle-button_burger {
+                    transform: translate(-50px);
+                    background: transparent;
+
+                    &::before {
+                        transform: rotate(45deg) translate(35px, -35px);
+                    }
+
+                    &::after {
+                        transform: rotate(-45deg) translate(35px, 35px);
+                    }
+                }
+            }
+        }
+
+        //nav logo/menu and items----------------------------------------
+        .nav-logo-div {
+            width: 90px;
+            height: 100%;
+            //border: $buildBorder;
+
+            .nav-logo {
+                margin-top: 5px;
+                //border: $buildBorder;
+    
+                @include largeMobile {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .nav-menu {
+            width: 100%;
+
+            @include largeMobile {
+                display: $getRid;
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        .nav-menu.active {
+
+            @include largeMobile {
+                @include flexJustEnd;
+            }
+        }
+
+        .ul-div {
+            width: 100%;
+            @include flexSeperate;
+            //border: $buildBorder;
+
+            @include largeMobile {
+                width: 50%;
+                @include rowStack;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            }
+
+            .ul-left {
+                width: 100%;
+                @include flexAlignCenter;
+                padding: 0;
+                list-style: $getRid;
+                //border: $buildBorder;
+    
+                @include largeMobile {
+                    @include flexColAlignStart;
+                    width: 60%;
+                    padding-left: 12px;
+                    background-color: $backgroundColor; 
+                    //border: $buildBorder;
+                }
+    
+                //dropdown nav items-------------------------
+                .dropdown {
+                    overflow: hidden;
+
+                    &:hover .dropdown-content {
+                        display: block;
+                    }  
+
+                    &:hover .dropdown-content-two {
+                        display: block;
+                    }  
+    
+                    .dropbtn {
+                        font-family: $mainFont;
+                        font-size: 12px;
+                        font-weight: $bold;
+                        color: $mainPColor;
+                        background-color: $backgroundColor;
+                        border: $getRid;
+                        outline: $getRid;
+                        margin-left: 45px;
+                        //border: $buildBorder;
+
+                        &:hover {
+                            color: hsl(0, 0%, 0%);
+
+                            .dropdown-arrow {
+                                transform: rotate(180deg);
+                            }
+                        }  
+                        
+                        @include largeMobile {
+                            font-size: 14px;
+                            margin-left: 0;
+                            margin-bottom: 14px;
+                            padding: 0;
+                        }
+
+                        @include fold {
+                            font-size: 10px;
+                        }
+    
+                        @include large {
+                            font-size: 14px;
+                        }
+                    }
+
+                    .dropdown-content {
+                        display: $getRid;
+                        position: absolute;
+                        background-color: $backgroundColor;
+                        min-width: 100px;
+                        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                        border-radius: 8%;
+                        z-index: 1;
+                        padding: 10px;
+                        margin-left: 23px;
+
+                        @include largeMobile {
+                            margin-left: 0;
+                        }
+        
+                        .dropdown-item {
+                            font-family: $mainFont;
+                            font-size: 12px;
+                            font-weight: $bold;
+                            color: $mainPColor;
+                            text-decoration: $getRid;
+                            display: block;
+                            padding: 8px;
+
+                            &:hover {
+                                color: hsl(0, 0%, 0%);
+                            }
+
+                            .dropdown-logo {
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+
+                    .dropdown-content-two {
+                        display: $getRid;
+                        position: absolute;
+                        background-color: $backgroundColor;
+                        min-width: 100px;
+                        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                        border-radius: 8%;
+                        z-index: 1;
+                        padding: 10px;
+                        margin-left: 35px;
+
+                        @include largeMobile {
+                            margin-left: 0;
+                        }
+        
+                        .dropdown-item {
+                            font-family: $mainFont;
+                            font-size: 12px;
+                            font-weight: $bold;
+                            color: $mainPColor;
+                            text-decoration: $getRid;
+                            display: block;
+                            padding: 8px;
+
+                            &:hover {
+                                color: hsl(0, 0%, 0%);
+                            }
+                        }        
+                    }    
+                }
+    
+                li {
+
+                    @include largeMobile {
+                        margin-bottom: 14px;
+                    }
+    
+                    .nav-item {
+                        font-family: $mainFont;
+                        font-size: 12px;
+                        color: $mainPColor;
+                        font-weight: $bold;
+                        text-decoration: $getRid;
+                        margin-left: 45px;
+                        //border: $buildBorder;
+    
+                        @include tablet {
+                            font-size: 10px;
+                        }
+    
+                        @include largeMobile {
+                            margin-left: 0;
+                            margin-right: 0;
+                            font-size: 14px;
+                        }
+
+                        @include fold {
+                            font-size: 10px;
+                        }
+    
+                        @include large {
+                            font-size: 14px;
+                        }
+    
+                        &:hover {
+                            color: hsl(0, 0%, 0%);
+                        }
+                    }
+                }
+            }//ul left
+    
+            .ul-right {
+                @include flexAlignCenter;
+                @include flexJustEnd;
+                width: 40%;
+                list-style: $getRid;
+                padding-left: 0;
+                margin-right: 0 auto;
+                //border: $buildBorder;
+
+                @include largeMobile {
+                    @include flexColAlignCenter;
+                    width: 100%;
+                    margin: 0;
+                    padding-bottom: 80px;
+                }
+
+                .li-right {
+
+                    @include largeMobile {
+                        margin-bottom: 15px;
+                    }
+
+                    .nav-item {
+                        font-family: $mainFont;
+                        font-size: 12px;
+                        color: $mainPColor;
+                        font-weight: $bold;
+                        text-decoration: $getRid;
+                        margin-right: 35px;
+                        //border: $buildBorder;
+
+                        @include largeMobile {
+                            margin: 0;
+                        }
+
+                        @include large {
+                            font-size: 14px;
+                        }
+
+                        &:hover {
+                            color: hsl(0, 0%, 0%);
+                        }
+                    }
+        
+                    .nav-btn {
+                        font-family: $mainFont;
+                        font-size: 12px;
+                        color: $mainPColor;
+                        font-weight: $bold;
+                        text-decoration: none;
+                        border: 2px solid $mainPColor;
+                        border-radius: 10px;
+                        padding: 6px 12px 6px 12px;
+    
+                        @include largeMobile {
+                            padding: 8px 40px 8px 40px;
+                        }
+
+                        @include fold {
+                            padding: 8px 30px 8px 30px;
+                        }
+
+                        @include large {
+                            font-size: 14px;
+                            padding: 10px 16px 10px 16px;
+                        }
+
+                        &:hover {
+                            color: hsl(0, 0%, 0%);
+                            border: 2px solid hsl(0, 0%, 0%);
+                        }
+                    }
+                }  
+            }//ul right
+        }
+    }
+}
